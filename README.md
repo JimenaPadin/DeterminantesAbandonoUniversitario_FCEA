@@ -33,6 +33,7 @@ Para correr el código se necesitan las bases originales ubicadas como se descri
 ```
 .
 ├── README.md
+├── DeterminantesAbandonoUniversitario_FCEA.Rproj
 ├── scripts/                         scripts numerados, en orden de ejecución
 │   ├── 01_limpieza_gen2012.R       limpieza Economía 2012 (actividades, abandono, formulario)
 │   ├── 02_limpieza_gen2019.R       limpieza Contador Público 2019
@@ -40,13 +41,15 @@ Para correr el código se necesitan las bases originales ubicadas como se descri
 │   ├── 04_caracterizacion_ingreso.R  caracterización al ingreso (formularios) -> resultados/
 │   ├── 05_aprobacion_abandono.R    tasa de abandono según aprobación de UC -> resultados/
 │   └── 06_graficos.Rmd             figuras 1 a 5, leyendo solo resultados/
-├── resultados/                     tablas agregadas y figuras (se publican)
+├── resultados/                     tablas agregadas y figuras
 │   ├── indicadores_encuesta.csv
 │   ├── caracterizacion_ingreso.csv
 │   ├── caracterizacion_tasa_abandono.csv
 │   ├── tasas_abandono_uc.csv
 │   └── graficos/                   plot1.png ... plot5.png
 ├── publicacion/                    documento publicado
+│   └── DIE_El abandono universitario en FCEA (UdelaR)....pdf
+├── documentacion/                  instrumentos de recolección (en blanco)
 ├── materia_2025/                   entrega original del curso (versión previa)
 └── data/                           NO SE PUBLICA (ver .gitignore)
     ├── raw/                        bases originales, por generación
@@ -66,8 +69,8 @@ Para correr el código se necesitan las bases originales ubicadas como se descri
 
 | Script | Lee | Genera |
 |---|---|---|
-| `01_limpieza_gen2012.R` | `data/raw/2017_gen2012/` | `data/intermediate/` (actividades en formato ancho y marca de abandono, 2012) |
-| `02_limpieza_gen2019.R` | `data/raw/2024_gen2019/`, `2025_complemento/` | `data/intermediate/` (ídem, 2019) |
+| `01_limpieza_gen2012.R` | `data/raw/2017_gen2012/` | `data/clean/` (actividades en formato ancho y marca de abandono, 2012) |
+| `02_limpieza_gen2019.R` | `data/raw/2024_gen2019/`, `2025_complemento/` | `data/clean/` (ídem, 2019) |
 | `03_indicadores_encuesta.R` | encuestas 2017 y 2024 | `resultados/indicadores_encuesta.csv` |
 | `04_caracterizacion_ingreso.R` | formularios de ingreso | `resultados/caracterizacion_*.csv` |
 | `05_aprobacion_abandono.R` | salidas de 01 y 02 | `resultados/tasas_abandono_uc.csv` |
