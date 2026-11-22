@@ -1,0 +1,13 @@
+carrera,cohorte,uc,aprobacion,n,n_abandono,tasa_abandono,fuente
+Lic. en Economía,2012,Intro. a la Microeconomía,Aprobación,214,35,0.1636,calculado desde las bases
+Lic. en Economía,2012,Intro. a la Microeconomía,No aprobación,119,68,0.5714,calculado desde las bases
+Lic. en Economía,2012,Economía Descriptiva,Aprobación,154,11,0.0714,calculado desde las bases
+Lic. en Economía,2012,Economía Descriptiva,No aprobación,145,69,0.4759,calculado desde las bases
+Lic. en Economía,2012,Cálculo,Aprobación,153,20,0.1307,calculado desde las bases
+Lic. en Economía,2012,Cálculo,No aprobación,173,78,0.4509,calculado desde las bases
+Contador Público,2019,Conceptos Contables,Aprobación,NA,NA,0.23,informe publicado (no reproducido)
+Contador Público,2019,Conceptos Contables,No aprobación,NA,NA,0.88,informe publicado (no reproducido)
+Contador Público,2019,Contabilidad General I,Aprobación,NA,NA,0.15,informe publicado (no reproducido)
+Contador Público,2019,Contabilidad General I,No aprobación,NA,NA,0.5,informe publicado (no reproducido)
+Contador Público,2019,Cálculo,Aprobación,NA,NA,0.16,informe publicado (no reproducido)
+Contador Público,2019,Cálculo,No aprobación,NA,NA,0.46,informe publicado (no reproducido)

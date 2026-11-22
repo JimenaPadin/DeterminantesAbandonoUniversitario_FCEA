@@ -1,0 +1,132 @@
+carrera,cohorte,grupo,variable,categoria,n,n_validos,pct
+Lic. en Economía,2012,Total,busca_empleo,Busca,60,320,18.8
+Lic. en Economía,2012,Total,busca_empleo,No busca,NA,NA,54
+Lic. en Economía,2012,Total,busca_empleo,Ya trabaja,75,320,23.4
+Lic. en Economía,2012,Total,educ_media,Exterior,0,300,0
+Lic. en Economía,2012,Total,educ_media,Privado,164,300,54
+Lic. en Economía,2012,Total,educ_media,Público,136,300,46
+Lic. en Economía,2012,Total,extranjero,No,310,320,96.9
+Lic. en Economía,2012,Total,extranjero,Sí,10,320,3
+Lic. en Economía,2012,Total,hijos,No,NA,320,NA
+Lic. en Economía,2012,Total,hijos,Sí,NA,320,1
+Lic. en Economía,2012,Total,procedencia,Canelones,47,320,15
+Lic. en Economía,2012,Total,procedencia,Interior,9,320,2
+Lic. en Economía,2012,Total,procedencia,Montevideo,264,320,83
+Lic. en Economía,2012,Total,sexo,Femenino,151,320,47
+Lic. en Economía,2012,Total,sexo,Masculino,169,320,53
+Lic. en Economía,2012,Total,trabaja_ingreso,No trabaja,245,320,76
+Lic. en Economía,2012,Total,trabaja_ingreso,Trabaja,75,320,23.4
+Lic. en Economía,2012,Total,transicion_inmediata,No,103,319,32.3
+Lic. en Economía,2012,Total,transicion_inmediata,Sí,216,319,68
+Lic. en Economía,2012,Total,vive_con_ambos_padres,No,168,320,52.5
+Lic. en Economía,2012,Total,vive_con_ambos_padres,Sí,152,320,47.5
+Lic. en Economía,2012,Total,vive_con_padres,No,75,320,23.4
+Lic. en Economía,2012,Total,vive_con_padres,Sí,245,320,77
+Lic. en Economía,2012,Abandono,busca_empleo,Busca,28,103,27.2
+Lic. en Economía,2012,Abandono,busca_empleo,Ya trabaja,33,103,32
+Lic. en Economía,2012,Abandono,educ_media,Privado,46,92,50
+Lic. en Economía,2012,Abandono,educ_media,Público,46,92,50
+Lic. en Economía,2012,Abandono,extranjero,No,97,103,94.2
+Lic. en Economía,2012,Abandono,extranjero,Sí,6,103,5.8
+Lic. en Economía,2012,Abandono,hijos,No,NA,103,NA
+Lic. en Economía,2012,Abandono,hijos,Sí,NA,103,NA
+Lic. en Economía,2012,Abandono,procedencia,Canelones,14,103,13.6
+Lic. en Economía,2012,Abandono,procedencia,Interior,NA,103,NA
+Lic. en Economía,2012,Abandono,procedencia,Montevideo,87,103,84.5
+Lic. en Economía,2012,Abandono,sexo,Femenino,48,103,46.6
+Lic. en Economía,2012,Abandono,sexo,Masculino,55,103,53.4
+Lic. en Economía,2012,Abandono,trabaja_ingreso,No trabaja,70,103,68
+Lic. en Economía,2012,Abandono,trabaja_ingreso,Trabaja,33,103,32
+Lic. en Economía,2012,Abandono,transicion_inmediata,No,47,102,46.1
+Lic. en Economía,2012,Abandono,transicion_inmediata,Sí,55,102,53.9
+Lic. en Economía,2012,Abandono,vive_con_ambos_padres,No,59,103,57.3
+Lic. en Economía,2012,Abandono,vive_con_ambos_padres,Sí,44,103,42.7
+Lic. en Economía,2012,Abandono,vive_con_padres,No,25,103,24.3
+Lic. en Economía,2012,Abandono,vive_con_padres,Sí,78,103,75.7
+Lic. en Economía,2012,No abandono,busca_empleo,Busca,32,217,14.7
+Lic. en Economía,2012,No abandono,busca_empleo,Ya trabaja,42,217,19.4
+Lic. en Economía,2012,No abandono,educ_media,Privado,118,208,56.7
+Lic. en Economía,2012,No abandono,educ_media,Público,90,208,43.3
+Lic. en Economía,2012,No abandono,extranjero,No,NA,217,NA
+Lic. en Economía,2012,No abandono,extranjero,Sí,NA,217,NA
+Lic. en Economía,2012,No abandono,hijos,No,NA,217,NA
+Lic. en Economía,2012,No abandono,hijos,Sí,NA,217,NA
+Lic. en Economía,2012,No abandono,procedencia,Canelones,33,217,15.2
+Lic. en Economía,2012,No abandono,procedencia,Interior,7,217,3.2
+Lic. en Economía,2012,No abandono,procedencia,Montevideo,177,217,81.6
+Lic. en Economía,2012,No abandono,sexo,Femenino,103,217,47.5
+Lic. en Economía,2012,No abandono,sexo,Masculino,114,217,52.5
+Lic. en Economía,2012,No abandono,trabaja_ingreso,No trabaja,175,217,80.6
+Lic. en Economía,2012,No abandono,trabaja_ingreso,Trabaja,42,217,19
+Lic. en Economía,2012,No abandono,transicion_inmediata,No,56,217,25.8
+Lic. en Economía,2012,No abandono,transicion_inmediata,Sí,161,217,74.2
+Lic. en Economía,2012,No abandono,vive_con_ambos_padres,No,109,217,50.2
+Lic. en Economía,2012,No abandono,vive_con_ambos_padres,Sí,108,217,49.8
+Lic. en Economía,2012,No abandono,vive_con_padres,No,50,217,23
+Lic. en Economía,2012,No abandono,vive_con_padres,Sí,167,217,77
+Contador Público,2019,Total,busca_empleo,Busca,372,971,38.3
+Contador Público,2019,Total,busca_empleo,No busca,599,971,62
+Contador Público,2019,Total,educ_media,Exterior,43,1243,3
+Contador Público,2019,Total,educ_media,Privado,267,1243,20
+Contador Público,2019,Total,educ_media,Público,933,1243,77
+Contador Público,2019,Total,extranjero,No,1189,1248,95.3
+Contador Público,2019,Total,extranjero,Sí,59,1248,5
+Contador Público,2019,Total,hijos,No,1196,1248,95.8
+Contador Público,2019,Total,hijos,Sí,52,1248,4
+Contador Público,2019,Total,procedencia,Canelones,264,1248,21
+Contador Público,2019,Total,procedencia,Interior,168,1248,14
+Contador Público,2019,Total,procedencia,Montevideo,816,1248,65
+Contador Público,2019,Total,sexo,Femenino,690,1248,55
+Contador Público,2019,Total,sexo,Masculino,558,1248,45
+Contador Público,2019,Total,trabaja_ingreso,No trabaja,971,1248,78
+Contador Público,2019,Total,trabaja_ingreso,Trabaja,277,1248,22.2
+Contador Público,2019,Total,transicion_inmediata,No,242,1243,19.5
+Contador Público,2019,Total,transicion_inmediata,Sí,1001,1243,81
+Contador Público,2019,Total,vive_con_ambos_padres,No,737,1248,59.1
+Contador Público,2019,Total,vive_con_ambos_padres,Sí,511,1248,40.9
+Contador Público,2019,Total,vive_con_padres,No,390,1248,31.2
+Contador Público,2019,Total,vive_con_padres,Sí,858,1248,43
+Contador Público,2019,Abandono,busca_empleo,Busca,117,246,47.6
+Contador Público,2019,Abandono,busca_empleo,No busca,129,246,52.4
+Contador Público,2019,Abandono,educ_media,Exterior,22,351,6.3
+Contador Público,2019,Abandono,educ_media,Privado,72,351,20.5
+Contador Público,2019,Abandono,educ_media,Público,257,351,73.2
+Contador Público,2019,Abandono,extranjero,No,329,354,92.9
+Contador Público,2019,Abandono,extranjero,Sí,25,354,7.1
+Contador Público,2019,Abandono,hijos,No,326,354,92.1
+Contador Público,2019,Abandono,hijos,Sí,28,354,7.9
+Contador Público,2019,Abandono,procedencia,Canelones,85,354,24
+Contador Público,2019,Abandono,procedencia,Interior,33,354,9.3
+Contador Público,2019,Abandono,procedencia,Montevideo,236,354,66.7
+Contador Público,2019,Abandono,sexo,Femenino,178,354,50.3
+Contador Público,2019,Abandono,sexo,Masculino,176,354,49.7
+Contador Público,2019,Abandono,trabaja_ingreso,No trabaja,246,354,69.5
+Contador Público,2019,Abandono,trabaja_ingreso,Trabaja,108,354,58
+Contador Público,2019,Abandono,transicion_inmediata,No,87,351,24.8
+Contador Público,2019,Abandono,transicion_inmediata,Sí,264,351,75.2
+Contador Público,2019,Abandono,vive_con_ambos_padres,No,235,354,66.4
+Contador Público,2019,Abandono,vive_con_ambos_padres,Sí,119,354,33.6
+Contador Público,2019,Abandono,vive_con_padres,No,125,354,35.3
+Contador Público,2019,Abandono,vive_con_padres,Sí,229,354,64.7
+Contador Público,2019,No abandono,busca_empleo,Busca,255,725,35.2
+Contador Público,2019,No abandono,busca_empleo,No busca,470,725,64.8
+Contador Público,2019,No abandono,educ_media,Exterior,21,892,2.4
+Contador Público,2019,No abandono,educ_media,Privado,195,892,21.9
+Contador Público,2019,No abandono,educ_media,Público,676,892,75.8
+Contador Público,2019,No abandono,extranjero,No,860,894,96.2
+Contador Público,2019,No abandono,extranjero,Sí,34,894,3.8
+Contador Público,2019,No abandono,hijos,No,870,894,97.3
+Contador Público,2019,No abandono,hijos,Sí,24,894,2.7
+Contador Público,2019,No abandono,procedencia,Canelones,179,894,20
+Contador Público,2019,No abandono,procedencia,Interior,135,894,15.1
+Contador Público,2019,No abandono,procedencia,Montevideo,580,894,64.9
+Contador Público,2019,No abandono,sexo,Femenino,512,894,57.3
+Contador Público,2019,No abandono,sexo,Masculino,382,894,42.7
+Contador Público,2019,No abandono,trabaja_ingreso,No trabaja,725,894,81.1
+Contador Público,2019,No abandono,trabaja_ingreso,Trabaja,169,894,19
+Contador Público,2019,No abandono,transicion_inmediata,No,155,892,17.4
+Contador Público,2019,No abandono,transicion_inmediata,Sí,737,892,82.6
+Contador Público,2019,No abandono,vive_con_ambos_padres,No,502,894,56.2
+Contador Público,2019,No abandono,vive_con_ambos_padres,Sí,392,894,43.8
+Contador Público,2019,No abandono,vive_con_padres,No,265,894,29.6
+Contador Público,2019,No abandono,vive_con_padres,Sí,629,894,70.4

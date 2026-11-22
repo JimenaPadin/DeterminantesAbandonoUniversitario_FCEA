@@ -1,0 +1,407 @@
+---
+title: "Gráficos"
+subtitle: "Figuras 1 a 5 del artículo"
+output: pdf_document
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  fig.height = 4,
+  fig.width = 7
+)
+
+library(tidyverse)
+library(scales)
+library(viridisLite)
+library(fmsb)
+library(shadowtext)
+library(here)
+
+dir_graficos <- here("resultados", "graficos")
+
+cols <- viridis(4)
+
+cap <- function(x, width = 105) {
+  stringr::str_wrap(x, width = width)
+}
+
+# Tablas agregadas de las que salen todos los números
+ind   <- read_csv(here("resultados", "indicadores_encuesta.csv"), show_col_types = FALSE)
+tasas <- read_csv(here("resultados", "tasas_abandono_uc.csv"),    show_col_types = FALSE)
+
+# Etiqueta "carrera + cohorte" usada en las figuras
+ind <- ind %>% mutate(gen = paste(carrera, cohorte))
+```
+
+# Plot 1
+
+```{r}
+plot1 <- ind %>%
+  filter(indicador == "tipo_abandono") %>%
+  mutate(
+    gen = factor(gen, levels = c("Contador Público 2019", "Lic. en Economía 2012")),
+    tipo = factor(recode(categoria, instruccional = "Instruccional", sistemico = "Sistémico"),
+                  levels = c("Instruccional", "Sistémico")),
+    val = pct / 100
+  ) %>%
+  ggplot(aes(y = gen, x = val, fill = tipo)) +
+  geom_col(aes(group = tipo)) +
+  labs(caption = "Figura 1. Tipo de abandono según carrera y generación: instruccional vs sistémico. Fuente: elaboración propia.",
+       y = "", x = "", fill = "Tipo abandono") +
+  scale_fill_manual(values = c("Instruccional" = cols[2],
+                               "Sistémico" = cols[4]),
+                    name = "") +
+  scale_x_continuous(labels = scales::percent) +
+  geom_label(aes(label = scales::percent(val, accuracy = 1),
+                 group = tipo),
+             fill = alpha("white", 0.4),
+             label.size = 0,
+             color = "black",
+             size = 4,
+             position = position_stack(0.5)) +
+  theme_bw(base_size = 14) +
+  theme(plot.caption.position = "plot")
+
+plot1
+
+ggsave(file.path(dir_graficos, "plot1.png"), plot1, width = 8, height = 3)
+```
+
+# Plot 2
+
+```{r}
+# Tasa de abandono según aprobación de cada UC clave. Las filas de 2019 vienen del
+# informe publicado (ver la columna `fuente` en resultados/tasas_abandono_uc.csv).
+base_graficas <- tasas %>%
+  select(carrera, cohorte, uc, aprobacion, tasa_abandono)
+
+base_brecha <- base_graficas |>
+  pivot_wider(
+    names_from = aprobacion,
+    values_from = tasa_abandono
+  ) |>
+  rename(
+    tasa_aprobo = `Aprobación`,
+    tasa_no_aprobo = `No aprobación`
+  ) |>
+  mutate(
+    brecha = tasa_no_aprobo - tasa_aprobo,
+    etiqueta_brecha = paste0("+", round(brecha * 100), " pp"),
+    grupo = if_else(
+      uc == "Cálculo",
+      "Cálculo, comparación entre carreras",
+      "Otras unidades curriculares clave"
+    ),
+    unidad = case_when(
+      uc == "Cálculo" & carrera == "Lic. en Economía" ~ "Lic. en Economía 2012",
+      uc == "Cálculo" & carrera == "Contador Público" ~ "Contador Público 2019",
+      TRUE ~ paste0(uc, " — ", carrera, " ", cohorte)
+    )
+  )
+
+orden_unidad <- c(
+  "Lic. en Economía 2012",
+  "Contador Público 2019",
+  "Intro. a la Microeconomía — Lic. en Economía 2012",
+  "Economía Descriptiva — Lic. en Economía 2012",
+  "Conceptos Contables — Contador Público 2019",
+  "Contabilidad General I — Contador Público 2019"
+)
+
+base_brecha <- base_brecha |>
+  mutate(
+    unidad = factor(unidad, levels = rev(orden_unidad)),
+    grupo = factor(
+      grupo,
+      levels = c(
+        "Cálculo, comparación entre carreras",
+        "Otras unidades curriculares clave"
+      )
+    )
+  )
+
+plot2 <- ggplot(base_brecha, aes(y = unidad)) +
+  geom_segment(
+    aes(
+      x = tasa_aprobo,
+      xend = tasa_no_aprobo,
+      yend = unidad
+    ),
+    linewidth = 1,
+    color = "grey60"
+  ) +
+  geom_point(
+    aes(x = tasa_aprobo, color = "Aprobación"),
+    size = 4
+  ) +
+  geom_point(
+    aes(x = tasa_no_aprobo, color = "No aprobación"),
+    size = 4
+  ) +
+  geom_text(
+    aes(
+      x = pmin(tasa_no_aprobo + 0.035, 0.96),
+      label = etiqueta_brecha
+    ),
+    hjust = 0,
+    size = 4
+  ) +
+  facet_wrap(
+    ~ grupo,
+    ncol = 1,
+    scales = "free_y"
+  ) +
+  scale_x_continuous(
+    labels = scales::percent_format(accuracy = 1),
+    breaks = seq(0, 1, 0.25)
+  ) +
+  coord_cartesian(xlim = c(0, 1), clip = "off") +
+  scale_color_manual(
+    values = c(
+      "Aprobación" = "#35B779FF",
+      "No aprobación" = "#440154FF"
+    )
+  ) +
+  labs(
+    x = "Tasa de abandono",
+    y = NULL,
+    color = "Condición de la UC",
+    caption = "Figura 2. Tasa de abandono según aprobación de unidades curriculares clave, por carrera y generación. \n Los segmentos indican la brecha entre quienes aprobaron y no aprobaron, expresada en puntos \n  porcentuales. Fuente: elaboración propia.") +
+  theme_bw(base_size = 14) +
+  theme(plot.caption = element_text(size = 15),
+        strip.text = element_text(size = 15),
+        legend.position = "bottom",
+        legend.location = "plot",
+        legend.justification = "left",
+        legend.box.just = "left",
+        plot.caption.position = "plot")
+
+plot2
+
+ggsave(file.path(dir_graficos, "plot2.png"), plot2, height = 6, width = 10)
+```
+
+# Plot 3
+
+```{r}
+datos <- ind %>%
+  filter(indicador == "vulnerabilidad_academica") %>%
+  transmute(generacion = as.character(cohorte),
+            vulnerabilidad = as.numeric(categoria),
+            porcentaje = round(pct))
+
+# posición de las etiquetas para que no se pisen
+datos_lab <- datos %>%
+  mutate(
+    nudge_y = case_when(
+      generacion == "2012" & vulnerabilidad == 2 ~ -2.5,  # abajo
+      generacion == "2019" & vulnerabilidad == 2 ~  2.5,  # arriba
+      generacion == "2012" & vulnerabilidad == 4 ~  2.5,  # el 0% se pone arriba para que se vea
+      generacion == "2012" ~ 2.5,
+      generacion == "2019" ~ 2.5
+    ),
+    y_label = porcentaje + nudge_y
+  )
+
+plot3 <- ggplot(
+  datos_lab,
+  aes(
+    x = vulnerabilidad,
+    y = porcentaje,
+    color = generacion,
+    group = generacion
+  )
+) +
+  scale_y_continuous(
+    limits = c(0, 40),
+    labels = \(x) paste0(x, "%"),
+    breaks = seq(0, 40, 10)
+  ) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  shadowtext::geom_shadowtext(
+    aes(
+      y = y_label,
+      label = paste0(' ', porcentaje, "%"),
+      colour = generacion
+    ),
+    show.legend = FALSE,
+    size = 4,
+    bg.colour = "black",
+    bg.r = 0.03
+  ) +
+  scale_color_manual(
+    values = c(
+      "2012" = "#31688EFF",
+      "2019" = "#FDE725FF"
+    ),
+    labels = c(
+      "2012" = "Lic. en Economía 2012",
+      "2019" = "Contador Público 2019"
+    )
+  ) +
+  labs(
+    x = "Nivel de vulnerabilidad académica",
+    y = "Porcentaje de estudiantes",
+    color = NULL,
+    caption = "Figura 3. Distribución de los niveles de vulnerabilidad académica reportados por estudiantes que \n abandonaron, según carrera y generación. Fuente: elaboración propia."
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "top",
+    plot.caption.position = "plot"
+  )
+
+plot3
+
+ggsave(file.path(dir_graficos, "plot3.png"), plot3, height = 4, width = 7.5)
+```
+
+# Plot 4
+
+```{r}
+datos2 <- ind %>%
+  filter(indicador == "integracion_social") %>%
+  transmute(generacion = as.character(cohorte),
+            integracion = as.numeric(categoria),
+            porcentaje = round(pct))
+
+datos2 <- datos2 %>%
+  mutate(
+    nudge_y = case_when(
+      generacion == "2019" & integracion == 2 ~ -2.5,  # abajo
+      generacion == "2012" & integracion == 6 ~  5.5,
+      generacion == "2012" & integracion == 1 ~  4,
+      generacion == "2012" & integracion == 3 ~  3.5,
+      generacion == "2012" ~ 2.5,
+      generacion == "2019" ~ 2.5
+    ),
+    y_label = porcentaje + nudge_y
+  )
+
+plot4 <- ggplot(
+  datos2,
+  aes(
+    x = integracion,
+    y = porcentaje,
+    color = generacion,
+    group = generacion
+  )
+) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 3) +
+  shadowtext::geom_shadowtext(
+    aes(
+      y = y_label,
+      label = paste0(porcentaje, "%"),
+      colour = generacion
+    ), show.legend = FALSE,
+    size = 4,
+    bg.colour = "black",
+    bg.r = 0.03
+  ) +
+  scale_x_continuous(breaks = 0:6) +
+  scale_y_continuous(
+    labels = \(x) paste0(x, "%"),
+    breaks = seq(0, 40, 10),
+    limits = c(0, 45),
+    expand = expansion(mult = c(0.02, 0.08))
+  ) +
+  scale_color_manual(
+    values = c(
+      "2012" = "#440154FF",
+      "2019" = "#35B779FF"
+    ),
+    labels = c(
+      "2012" = "Lic. en Economía 2012",
+      "2019" = "Contador Público 2019"
+    )
+  ) +
+  labs(
+    x = "Nivel de integración social",
+    y = "Porcentaje de estudiantes",
+    color = "",
+    caption = cap("Figura 4. Distribución de los niveles de integración social reportados por estudiantes que abandonaron, según carrera y generación. Fuente: elaboración propia.")
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "top",
+    plot.caption.position = "plot"
+  )
+
+plot4
+
+ggsave(file.path(dir_graficos, "plot4.png"), plot4, height = 4, width = 7.5)
+```
+
+# Plot 5
+
+```{r}
+dimensiones <- c("economico_laboral", "familiar_salud", "vocacion_motivacion",
+                 "social_emocional", "distancia")
+etiquetas_dim <- c("Económico/Laboral", "Familiar/Salud", "Vocacional/Motivacional",
+                   "Social/Emocional", "Distancia")
+
+radar <- ind %>%
+  filter(indicador == "dimension_personal") %>%
+  select(cohorte, categoria, pct) %>%
+  pivot_wider(names_from = cohorte, values_from = pct) %>%
+  arrange(match(categoria, dimensiones))
+
+economia_2012 <- radar[["2012"]]
+contador_2019 <- radar[["2019"]]
+
+data_radar <- as.data.frame(rbind(
+  max = rep(100, 5),
+  min = rep(0, 5),
+  `Lic. en Economía 2012` = economia_2012,
+  `Contador Público 2019` = contador_2019
+))
+colnames(data_radar) <- etiquetas_dim
+
+col_borde <- cols[c(2, 4)]
+col_rell <- adjustcolor(col_borde, alpha.f = 0.3)
+
+dibujar_radar <- function(titulo_pie) {
+  op <- par(mar = c(4, 2, 2, 5), xpd = TRUE)
+  radarchart(
+    data_radar,
+    axistype = 1,
+    pcol = col_borde,
+    pfcol = col_rell,
+    plwd = 2,
+    plty = 1,
+    cglcol = "grey80",
+    cglty = 1,
+    cglwd = 0.8,
+    caxislabels = c("0%", "25%", "50%", "75%", "100%"),
+    calcex = 0.7,
+    axislabcol = "grey20",
+    vlcex = 1.05
+  )
+  legend(
+    x = 0.85,
+    y = 1.1,
+    legend = rownames(data_radar)[3:4],
+    col = col_borde,
+    lwd = 2,
+    bty = "n",
+    cex = 0.9
+  )
+  mtext(titulo_pie, side = 1, line = 2.2, cex = 1, adj = 0.97)
+  par(op)
+}
+
+# En el documento
+dibujar_radar("Figura 5. Dimensiones personales del abandono según carrera y generación. \n Fuente: elaboración propia.")
+
+# En archivo
+png(file.path(dir_graficos, "plot5.png"), width = 1000, height = 700, res = 130)
+dibujar_radar("Figura 5. Dimensiones personales del abandono según carrera y generación. \n Fuente: elaboración propia.")
+dev.off()
+```

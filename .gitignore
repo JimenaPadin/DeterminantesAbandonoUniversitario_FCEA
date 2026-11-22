@@ -1,0 +1,65 @@
+# ==============================================================================
+# .gitignore - Abandono universitario FCEA
+# Regla de oro: NINGÚN dato individual entra al repositorio.
+# Se publican el código y las tablas agregadas de resultados/.
+# ==============================================================================
+
+# ---- Datos (privados) --------------------------------------------------------
+# Carpeta de datos completa (crudos, intermedios y limpios)
+data/
+
+# Manuscrito en evaluación ciega y archivos con autoría
+publicacion/manuscrito_anonimo/
+publicacion/**/autoria*
+*autoria*.docx
+
+# ---- Material con derechos de autor y archivo de trabajo ---------------------
+literatura/
+archivo/
+Fichas/
+
+# ---- Salidas de compilación (se regeneran) -----------------------------------
+codigo/*.html
+codigo/*_files/
+codigo/*_cache/
+*_cache/
+*.knit.md
+*.utf8.md
+.quarto/
+
+# ---- R / RStudio -------------------------------------------------------------
+.Rproj.user/
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Renviron
+.httr-oauth
+renv/library/
+renv/staging/
+
+# ---- Sistema y editores ------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# ---- Secretos ----------------------------------------------------------------
+.env
+*.pem
+*.key
+credentials*
+
+# --- Scripts de chequeo y otros ---------------------------------------------------------------
+resultados/tasas_abandono_uc_2019_informe.csv
+resultados/caracterizacion_control.csv
+resultados/comp_caracterizacion_ing.csv
+resultados/comp_caracterizacion_aband.csv
+scripts/03_chequear_indicadores.R
+scripts/04_chequear_caracterizacion.R
+scripts/05_chequear_aprobacion.R
+

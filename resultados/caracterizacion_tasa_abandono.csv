@@ -1,0 +1,46 @@
+carrera,cohorte,variable,categoria,n,n_abandono,tasa_abandono
+Lic. en Economía,2012,abandono_total,Total,343,111,32
+Lic. en Economía,2012,busca_empleo,Busca,60,28,46.7
+Lic. en Economía,2012,busca_empleo,Ya trabaja,75,33,44
+Lic. en Economía,2012,educ_media,Privado,164,46,28
+Lic. en Economía,2012,educ_media,Público,136,46,33.8
+Lic. en Economía,2012,extranjero,No,310,97,31.3
+Lic. en Economía,2012,extranjero,Sí,10,6,60
+Lic. en Economía,2012,hijos,No,NA,NA,NA
+Lic. en Economía,2012,hijos,Sí,NA,NA,NA
+Lic. en Economía,2012,procedencia,Canelones,47,14,29.8
+Lic. en Economía,2012,procedencia,Interior,NA,NA,NA
+Lic. en Economía,2012,procedencia,Montevideo,264,87,33
+Lic. en Economía,2012,sexo,Femenino,151,48,31.8
+Lic. en Economía,2012,sexo,Masculino,169,55,32.5
+Lic. en Economía,2012,trabaja_ingreso,No trabaja,245,70,28.6
+Lic. en Economía,2012,trabaja_ingreso,Trabaja,75,33,44
+Lic. en Economía,2012,transicion_inmediata,No,103,47,45.6
+Lic. en Economía,2012,transicion_inmediata,Sí,216,55,25.5
+Lic. en Economía,2012,vive_con_ambos_padres,No,168,59,35.1
+Lic. en Economía,2012,vive_con_ambos_padres,Sí,152,44,28.9
+Lic. en Economía,2012,vive_con_padres,No,75,25,33.3
+Lic. en Economía,2012,vive_con_padres,Sí,245,78,31.8
+Contador Público,2019,abandono_total,Total,1280,375,29
+Contador Público,2019,busca_empleo,Busca,372,117,31.5
+Contador Público,2019,busca_empleo,No busca,599,129,21.5
+Contador Público,2019,educ_media,Exterior,43,22,51.2
+Contador Público,2019,educ_media,Privado,267,72,27
+Contador Público,2019,educ_media,Público,933,257,27.5
+Contador Público,2019,extranjero,No,1189,329,27.7
+Contador Público,2019,extranjero,Sí,59,25,44
+Contador Público,2019,hijos,No,1196,326,27.3
+Contador Público,2019,hijos,Sí,52,28,53.8
+Contador Público,2019,procedencia,Canelones,264,85,32.2
+Contador Público,2019,procedencia,Interior,168,33,19.6
+Contador Público,2019,procedencia,Montevideo,816,236,28.9
+Contador Público,2019,sexo,Femenino,690,178,25.8
+Contador Público,2019,sexo,Masculino,558,176,31.5
+Contador Público,2019,trabaja_ingreso,No trabaja,971,246,25.3
+Contador Público,2019,trabaja_ingreso,Trabaja,277,108,39
+Contador Público,2019,transicion_inmediata,No,242,87,36
+Contador Público,2019,transicion_inmediata,Sí,1001,264,26.4
+Contador Público,2019,vive_con_ambos_padres,No,737,235,31.9
+Contador Público,2019,vive_con_ambos_padres,Sí,511,119,23.3
+Contador Público,2019,vive_con_padres,No,390,125,32.1
+Contador Público,2019,vive_con_padres,Sí,858,229,26.7

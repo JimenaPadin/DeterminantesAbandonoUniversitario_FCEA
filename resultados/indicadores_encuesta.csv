@@ -1,0 +1,64 @@
+carrera,cohorte,indicador,categoria,n,N,pct
+Contador Público,2019,tipo_abandono,instruccional,37,63,58.73
+Contador Público,2019,tipo_abandono,sistemico,26,63,41.27
+Contador Público,2019,motivo_al_menos_uno,personal,63,63,100
+Contador Público,2019,motivo_al_menos_uno,institucional,36,63,57.14
+Contador Público,2019,motivo_excluyente,mixto,36,63,57.14
+Contador Público,2019,motivo_excluyente,solo_personal,27,63,42.86
+Contador Público,2019,dimension_personal,economico_laboral,32,63,50.79
+Contador Público,2019,dimension_personal,familiar_salud,15,63,23.81
+Contador Público,2019,dimension_personal,vocacion_motivacion,47,63,74.6
+Contador Público,2019,dimension_personal,social_emocional,38,63,60.32
+Contador Público,2019,dimension_personal,distancia,18,63,28.57
+Contador Público,2019,item_institucional,p4c,4,63,6.35
+Contador Público,2019,item_institucional,p4i,12,63,19.05
+Contador Público,2019,item_institucional,p4o,9,63,14.29
+Contador Público,2019,item_institucional,p4p,29,63,46.03
+Contador Público,2019,item_institucional,p4q,9,63,14.29
+Contador Público,2019,item_institucional,p4v,5,63,7.94
+Contador Público,2019,vulnerabilidad_academica,0,12,63,19.05
+Contador Público,2019,vulnerabilidad_academica,1,16,63,25.4
+Contador Público,2019,vulnerabilidad_academica,2,21,63,33.33
+Contador Público,2019,vulnerabilidad_academica,3,11,63,17.46
+Contador Público,2019,vulnerabilidad_academica,4,3,63,4.76
+Contador Público,2019,integracion_social,0,9,63,14.29
+Contador Público,2019,integracion_social,1,26,63,41.27
+Contador Público,2019,integracion_social,2,18,63,28.57
+Contador Público,2019,integracion_social,3,5,63,7.94
+Contador Público,2019,integracion_social,4,2,63,3.17
+Contador Público,2019,integracion_social,5,3,63,4.76
+Contador Público,2019,integracion_social,6,0,63,0
+Contador Público,2019,facultad_pudo_evitar,p9_p14,19,63,30.16
+Contador Público,2019,composicion_sexo,mujer,35,63,55.56
+Contador Público,2019,mujer_entre_instruccional,mujer,19,37,51.35
+Contador Público,2019,mujer_entre_sistemico,mujer,16,26,61.54
+Lic. en Economía,2012,tipo_abandono,instruccional,61,80,76.25
+Lic. en Economía,2012,tipo_abandono,sistemico,19,80,23.75
+Lic. en Economía,2012,motivo_al_menos_uno,personal,80,80,100
+Lic. en Economía,2012,motivo_al_menos_uno,institucional,43,80,53.75
+Lic. en Economía,2012,motivo_excluyente,mixto,43,80,53.75
+Lic. en Economía,2012,motivo_excluyente,solo_personal,37,80,46.25
+Lic. en Economía,2012,dimension_personal,economico_laboral,21,80,26.25
+Lic. en Economía,2012,dimension_personal,familiar_salud,8,80,10
+Lic. en Economía,2012,dimension_personal,vocacion_motivacion,62,80,77.5
+Lic. en Economía,2012,dimension_personal,social_emocional,32,80,40
+Lic. en Economía,2012,dimension_personal,distancia,14,80,17.5
+Lic. en Economía,2012,item_institucional,p3_c2,10,80,12.5
+Lic. en Economía,2012,item_institucional,p3_n,18,80,22.5
+Lic. en Economía,2012,item_institucional,p3_o,34,80,42.5
+Lic. en Economía,2012,vulnerabilidad_academica,0,23,80,28.75
+Lic. en Economía,2012,vulnerabilidad_academica,1,25,80,31.25
+Lic. en Economía,2012,vulnerabilidad_academica,2,26,80,32.5
+Lic. en Economía,2012,vulnerabilidad_academica,3,6,80,7.5
+Lic. en Economía,2012,vulnerabilidad_academica,4,0,80,0
+Lic. en Economía,2012,integracion_social,0,22,80,27.5
+Lic. en Economía,2012,integracion_social,1,12,80,15
+Lic. en Economía,2012,integracion_social,2,27,80,33.75
+Lic. en Economía,2012,integracion_social,3,11,80,13.75
+Lic. en Economía,2012,integracion_social,4,7,80,8.75
+Lic. en Economía,2012,integracion_social,5,1,80,1.25
+Lic. en Economía,2012,integracion_social,6,0,80,0
+Lic. en Economía,2012,facultad_pudo_evitar,p9_p14,23,80,28.75
+Lic. en Economía,2012,composicion_sexo,mujer,41,80,51.25
+Lic. en Economía,2012,mujer_entre_instruccional,mujer,32,61,52.46
+Lic. en Economía,2012,mujer_entre_sistemico,mujer,9,19,47.37
