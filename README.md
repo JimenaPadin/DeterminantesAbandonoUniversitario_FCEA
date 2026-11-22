@@ -33,7 +33,7 @@ Para correr el código se necesitan las bases originales ubicadas como se descri
 ```
 .
 ├── README.md
-├── codigo/                         scripts numerados, en orden de ejecución
+├── scripts/                         scripts numerados, en orden de ejecución
 │   ├── 01_limpieza_gen2012.R       limpieza Economía 2012 (actividades, abandono, formulario)
 │   ├── 02_limpieza_gen2019.R       limpieza Contador Público 2019
 │   ├── 03_indicadores_encuesta.R   indicadores de las encuestas -> resultados/
@@ -45,7 +45,6 @@ Para correr el código se necesitan las bases originales ubicadas como se descri
 │   ├── caracterizacion_ingreso.csv
 │   ├── caracterizacion_tasa_abandono.csv
 │   ├── tasas_abandono_uc.csv
-│   ├── tasas_abandono_uc_2019_informe.csv
 │   └── graficos/                   plot1.png ... plot5.png
 ├── publicacion/                    documento publicado
 ├── materia_2025/                   entrega original del curso (versión previa)
@@ -54,7 +53,7 @@ Para correr el código se necesitan las bases originales ubicadas como se descri
     │   ├── 2017_gen2012/
     │   ├── 2024_gen2019/
     │   └── 2025_complemento/
-    └── intermediate/               salidas de 01 y 02
+    └── clean/               salidas de 01 y 02
 ```
 
 ---

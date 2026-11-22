@@ -9,9 +9,11 @@
 data/
 
 # Manuscrito en evaluación ciega y archivos con autoría
-publicacion/manuscrito_anonimo/
-publicacion/**/autoria*
-*autoria*.docx
+publicacion/manuscrito_autoria.pdf
+publicacion/manuscrito_anonimo.pdf
+publicacion/manuscrito_anonimo.docx
+publicacion/autoria.docx
+
 
 # ---- Material con derechos de autor y archivo de trabajo ---------------------
 literatura/
@@ -62,4 +64,6 @@ resultados/comp_caracterizacion_aband.csv
 scripts/03_chequear_indicadores.R
 scripts/04_chequear_caracterizacion.R
 scripts/05_chequear_aprobacion.R
+
+materia_2025/informes_previos/
 
